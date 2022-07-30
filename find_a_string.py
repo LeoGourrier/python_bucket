@@ -2,8 +2,12 @@
 #String traversal will take place from left to right, not from right to left. 
 
 def count_substring(string, sub_string):
-    
-    return
+    count = 0
+    if len(string) > len(sub_string):
+        #Will start at index 0 of string and loop through based on the len of substring
+        return count
+    else:
+        return count
 
 if __name__ == '__main__':
     string = input().strip()

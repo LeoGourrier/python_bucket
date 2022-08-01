@@ -13,6 +13,7 @@ response = bucket.create(
 )
 print('response')
 
+
 print('----------------------------')
 #List all bucket names
 for b in aws_resource.buckets.all():
@@ -24,3 +25,5 @@ s3 = client("s3").list_buckets()["Buckets"]
 for b in s3:
     print(b['Name'])
     print(b['CreationDate'])
+    
+#Test

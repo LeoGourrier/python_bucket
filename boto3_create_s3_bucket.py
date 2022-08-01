@@ -11,7 +11,7 @@ response = bucket.create(
         'LocationConstraint': 'us-east-2'
     },  
 )
-print('response')
+print(response)
 
 
 print('----------------------------')

@@ -13,6 +13,7 @@ response = bucket.create(
 )
 print('response')
 
+
 print('----------------------------')
 #List all bucket names
 for b in aws_resource.buckets.all():

@@ -1,8 +1,9 @@
-from boto3 import resource
-from boto3 import client
+#from boto3 import resource
+# boto3 import client
+import boto3
 
 #this creates a bucket called "thisisanewbucketbucket" in the US-EAST-2 region
-aws_resource = resource("s3") 
+aws_resource = boto3.resource("s3") 
 bucket = aws_resource.Bucket("thisisanewbucketbucket")
 
 response = bucket.create(
@@ -21,7 +22,7 @@ for b in aws_resource.buckets.all():
 
 print('----------------------------')
 #List bucket names and creation dates
-s3 = client("s3").list_buckets()["Buckets"]
+s3 = boto3.client("s3").list_buckets()["Buckets"]
 for b in s3:
     print(b['Name'])
     print(b['CreationDate'])

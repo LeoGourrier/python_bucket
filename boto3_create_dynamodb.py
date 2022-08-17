@@ -44,11 +44,11 @@ response = dynamodb.create_table(
 
 #Scan the Vegetables table
 '''
+dynamodb = boto3.client('dynamodb')
 response = dynamodb.scan(
     TableName='Vegetables'
 )
 '''
-
 #Write 10+ items to the Vegetables table
 '''
 dynamodb = boto3.resource('dynamodb')
@@ -127,12 +127,12 @@ with table.batch_writer() as batch:
 '''
 
 
-#Query an item Named Cucumber from Vegetables
+#Query an item from Vegetables
 '''
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('Vegetables')
 response = table.query(
-    KeyConditionExpression=Key('Name').eq('Broccoli')
+    KeyConditionExpression=Key('Id').eq(1)
 )
 print(response['Items'][0])
 '''
@@ -150,8 +150,8 @@ dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('Vegetables')
 table.delete_item(
     Key={
-        'Name': 'Artichoke',
-        'Count' : 6
+        'Id': 1,
+        'Name' : 'Artichoke'
     }
 )
 '''
